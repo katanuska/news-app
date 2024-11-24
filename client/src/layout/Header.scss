@@ -1,0 +1,39 @@
+@import '../variables.scss';
+
+// display: flex;
+// flex-direction: column;
+// gap: 16px;
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $primary-color;
+  padding: 9px 0;
+  color: $text-color-light;
+
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 46px;
+  }
+
+  .homepage-link {
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .get-button {
+    padding: 4px 12px;
+    background-color: $button-light-color;
+    color: $button-light-text-color;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+}

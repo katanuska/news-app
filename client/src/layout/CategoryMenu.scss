@@ -1,0 +1,34 @@
+@import '../variables.scss';
+
+.menu {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  img {
+    font-size: 24px;
+    filter: invert(0%) sepia(90%) saturate(25%) hue-rotate(318deg)
+      brightness(103%) contrast(100%);
+
+    &.selected {
+      filter: invert(18%) sepia(99%) saturate(2789%) hue-rotate(354deg)
+        brightness(86%) contrast(84%);
+    }
+  }
+}
+
+.menu-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.menu-text {
+  font-size: 14px;
+  margin-top: 4px;
+}
