@@ -11,9 +11,8 @@
   height: 100vh; /* constrain container to viewport height */
 
   .card {
-    background-color: $content-background-color;
-    border-radius: 8px;
-    // height: 232px;
+    background-color: $card-background-color;
+    border-radius: $card-radius;
 
     &.latest-news {
       grid-column: 3;

@@ -8,6 +8,8 @@
     width: 100%;
     height: 212px;
     object-fit: cover;
+    border-top-left-radius: $card-radius;
+    border-top-right-radius: $card-radius;
   }
 
   .card-content {

@@ -29,8 +29,26 @@ body {
   a {
     color: black;
   }
+
+  button {
+    border: none;
+    background-color: $primary-color;
+    color: $button-text-color;
+    cursor: pointer;
+
+    &.light {
+      background-color: $button-light-color;
+      color: $button-light-text-color;
+    }
+  }
 }
 
 .app {
   width: 1120px;
+
+  .pageContent {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 25px;
+  }
 }

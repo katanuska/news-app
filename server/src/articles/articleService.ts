@@ -16,14 +16,10 @@ const API_KEY_PARAM = 'apiKey';
 const COUNTRY_PARAM = 'country';
 const CATEGORY_PARAM = 'category';
 const SEARCH_PARAM = 'q';
-const SORTY_BY_PARAM = 'sortBy';
-const PAGE_PARAM = 'page';
-const PAGE_SIZE_PARAM = 'pageSize';
 
+const SORTY_BY_PARAM = 'sortBy';
 const COUNTRY = 'us'; // TODO: put to environment if more than one country should be supported
 const SORT_BY = 'publishedAt';
-const PAGE = 1;
-const PAGE_SIZE = 30;
 
 const OK_STATUS = 'ok';
 
@@ -69,15 +65,13 @@ const callNewsApiTopHeadlines = async (
   const searchParams: Record<string, any> = new URLSearchParams();
   searchParams.append(API_KEY_PARAM, process.env.NEWS_API_KEY);
   searchParams.append(COUNTRY_PARAM, COUNTRY);
+  searchParams.append(SORTY_BY_PARAM, SORT_BY);
   if (category) {
     searchParams.append(CATEGORY_PARAM, category);
   }
   if (search) {
     searchParams.append(SEARCH_PARAM, search);
   }
-  searchParams.append(SORTY_BY_PARAM, SORT_BY);
-  searchParams.append(PAGE_PARAM, PAGE);
-  searchParams.append(PAGE_SIZE_PARAM, PAGE_SIZE);
 
   const baseUrl = new URL(NEWS_API + TOP_HEADLINES_API);
   baseUrl.search = searchParams.toString();

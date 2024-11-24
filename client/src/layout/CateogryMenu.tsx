@@ -73,26 +73,25 @@ const CATEGORY_ITEMS: Map<Categorie, { icon: string; label: string }> = new Map(
 );
 
 type CategoriesMenuProps = {
-  selectedCategory: Categorie;
+  category: Categorie;
   onCategoryChange: (category: Categorie) => void;
 };
 const CategoriesMenu: React.FC<CategoriesMenuProps> = ({
-  selectedCategory,
+  category: category,
   onCategoryChange,
 }) => {
-  console.log(selectedCategory, onCategoryChange);
+  console.log(category, onCategoryChange);
 
   return (
     <nav className="menu">
       {Array.from(CATEGORY_ITEMS).map(([key, value]) => {
         return (
-          <button className="menu-item" onClick={() => onCategoryChange(key)}>
-            <img
-              src={value.icon}
-              alt="home"
-              className={selectedCategory === key ? 'selected' : ''}
-            />
-            <div className="menu-text">{value.label}</div>
+          <button
+            className={category === key ? 'selected menu-item' : 'menu-item'}
+            onClick={() => onCategoryChange(key)}
+          >
+            <img src={value.icon} alt="home" />
+            <small className="menu-text">{value.label}</small>
           </button>
         );
       })}
