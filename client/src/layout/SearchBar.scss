@@ -1,34 +1,45 @@
 @import '../variables.scss';
 .search-bar {
   display: flex;
-  align-items: center;
-  gap: 16px;
-  padding: 8px 16px;
+  flex-direction: row;
+  gap: 43px;
 }
 
-.logo {
-  font-size: 24px;
-  font-weight: bold;
+.page-title {
+  font-weight: 900;
+
+  .colored {
+    color: $primary-color;
+  }
 }
 
 .search-input-wrapper {
-  flex: 1;
+  align-self: center;
   position: relative;
-}
+  display: inline-block;
+  width: 725px;
 
-.search-input {
-  width: 100%;
-  padding: 8px 40px 8px 12px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
+  input {
+    width: 100%;
+    padding: 15px 105px 15px 50px;
+  }
 
-.search-button {
-  position: absolute;
-  top: 50%;
-  right: 8px;
-  transform: translateY(-50%);
-  font-size: 16px;
-  cursor: pointer;
-  text-transform: uppercase;
+  .input-icon {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY((-50%));
+    color: #a5a5a4;
+  }
+
+  .search-button {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    cursor: pointer;
+    text-transform: uppercase;
+    margin: 5px;
+    font-size: 15px;
+  }
 }

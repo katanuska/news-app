@@ -1,0 +1,75 @@
+@import './variables.scss';
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: $page-background-color;
+  color: $primary-color;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  font-size: 12px;
+  color: $text-color;
+
+  #root {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  h1 {
+    font-size: 32px;
+    letter-spacing: -0.14px;
+    line-height: 38.73px;
+  }
+  h2 {
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: $font-weight-bold;
+    letter-spacing: -0.11px;
+  }
+  h3 {
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: -0.12px;
+  }
+
+  p small {
+    font-size: 10px;
+    line-height: 16px;
+    letter-spacing: -0.02px;
+    color: $text-blue;
+  }
+
+  a {
+    color: black;
+    text-decoration: inherit;
+  }
+
+  input {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0px 1px 2px -1px #c8cad1;
+  }
+
+  button {
+    border: none;
+    background-color: $primary-color;
+    color: $button-text-color;
+    cursor: pointer;
+    padding: 10px 16px;
+    border-radius: 6px;
+
+    &.big-button {
+      border-radius: 8px;
+      padding: 10px 20px;
+      font-weight: bold;
+    }
+
+    &.light {
+      background-color: $button-light-color;
+      color: $button-light-text-color;
+    }
+  }
+}

@@ -8,12 +8,15 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
   const [searchQuery, setSearchQuery] = useState<string>('');
   return (
     <div className="search-bar">
-      <div className="logo">LOGO</div>
+      <h1 className="page-title">
+        <span className="colored">My</span>News
+      </h1>
       <div className="search-input-wrapper">
+        <img className="input-icon" src="/Search.svg" alt="search news" />
         <input
           type="text"
           className="search-input"
-          placeholder="Search news..."
+          placeholder="Search news"
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
         />

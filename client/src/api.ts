@@ -1,11 +1,20 @@
-export const apiFetch = async (endpoint: string, options: RequestInit = {}) => {
-  const response = await fetch(`/api${endpoint}`, {
+export const apiFetch = async (
+  endpoint: string,
+  options: RequestInit,
+  urlParams?: URLSearchParams
+) => {
+  const baseUrl = new URL(`/api${endpoint}`, window.location.origin);
+  if (urlParams) {
+    baseUrl.search = urlParams.toString();
+  }
+
+  const response = await fetch(baseUrl, {
     ...options,
     headers: {
-      ...options.headers,
+      ...options?.headers,
       'content-type': 'application/json',
     },
-    body: options.body ? options.body : undefined, // Automatically stringify the body
+    body: options?.body ? options.body : undefined, // Automatically stringify the body
   });
 
   if (!response.ok) {

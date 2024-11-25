@@ -13,8 +13,6 @@ const users: {
 export const signup = async (user: User): Promise<UserDTO> => {
   //TODO: add first and last name
 
-  console.log(users);
-  console.log(user.email);
   if (users[user.email]) {
     throw new Error('User already exists.');
   }
@@ -24,8 +22,6 @@ export const signup = async (user: User): Promise<UserDTO> => {
 
   // TODO: send email with verification link
   sendVerificationMail(user.email, user.firstName);
-
-  console.log(users);
 
   return {
     email: user.email,

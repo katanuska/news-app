@@ -80,13 +80,12 @@ const CategoriesMenu: React.FC<CategoriesMenuProps> = ({
   category: category,
   onCategoryChange,
 }) => {
-  console.log(category, onCategoryChange);
-
   return (
     <nav className="menu">
       {Array.from(CATEGORY_ITEMS).map(([key, value]) => {
         return (
           <button
+            key={key}
             className={category === key ? 'selected menu-item' : 'menu-item'}
             onClick={() => onCategoryChange(key)}
           >

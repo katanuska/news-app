@@ -16,29 +16,40 @@ function App() {
   //TODO: add search
   //TODO: add favorites
 
-  const loadArticles = useCallback(async (category: Categorie) => {
-    let url = '/articles';
-    if (category && category != 'home') {
-      url += '?category=' + category;
-    }
+  const loadArticles = useCallback(
+    async (category: Categorie, searchQuery?: string) => {
+      let url = '/articles';
+      const urlParams = new URLSearchParams();
+      if (category != 'home') {
+        urlParams.append('category', category);
+      }
+      if (searchQuery?.length) {
+        urlParams.append('search', searchQuery);
+      }
 
-    const response: Article[] = await apiFetch(url);
-    setArticles(response);
-  }, []);
+      const response: Article[] = await apiFetch(
+        url,
+        { method: 'GET' },
+        urlParams
+      );
+      setArticles(response);
+
+      //TODO: error handling when error fetching articles
+    },
+    []
+  );
 
   useEffect(() => {
     loadArticles(category);
   }, [loadArticles]);
 
-  const handleSearch = (query: string) => {
-    //TODO: implement search
-    console.log('Search ' + query);
+  const handleSearch = (searchQuery: string) => {
+    loadArticles(category, searchQuery);
   };
 
   const handleCategoryChange = (category: Categorie) => {
     setCategory(category);
     loadArticles(category);
-    console.log('Load category ' + category);
   };
 
   return (

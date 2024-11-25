@@ -15,8 +15,8 @@ const Articles: React.FC<ArticlesProps> = ({ articles = [] }) => {
         <LlatestNews articles={articles.slice(0, 10)} />
       </div>
       {articles.map((article) => (
-        <div className="card">
-          <ArticleCard key={article.url} {...article} />
+        <div className="card" key={article.url}>
+          <ArticleCard {...article} />
         </div>
       ))}
     </div>
