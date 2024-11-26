@@ -1,9 +1,7 @@
-// src/controllers/authController.ts
 import { Request, Response } from 'express';
 import { loadArticles } from './articleService';
 
 export const getArticles = async (req: Request, res: Response) => {
-  console.log('load articles');
   const { category, search } = req.query;
 
   const categoryStr = typeof category === 'string' ? category : undefined;

@@ -1,45 +1,52 @@
-@import '../variables.scss';
+@use '../variables.scss';
+
 .search-bar {
   display: flex;
   flex-direction: row;
   gap: 43px;
-}
 
-.page-title {
-  font-weight: 900;
+  .page-title {
+    font-weight: 900;
+    align-self: flex-start;
 
-  .colored {
-    color: $primary-color;
-  }
-}
-
-.search-input-wrapper {
-  align-self: center;
-  position: relative;
-  display: inline-block;
-  width: 725px;
-
-  input {
-    width: 100%;
-    padding: 15px 105px 15px 50px;
+    .colored {
+      color: variables.$primary-color;
+    }
   }
 
-  .input-icon {
-    position: absolute;
-    top: 50%;
-    left: 10px;
-    transform: translateY((-50%));
-    color: #a5a5a4;
+  .search-input-wrapper {
+    align-self: center;
+    position: relative;
+    display: inline-block;
+    width: 725px;
+
+    input {
+      width: 100%;
+      padding: 15px 105px 15px 50px;
+    }
+
+    .input-icon {
+      position: absolute;
+      top: 50%;
+      left: 10px;
+      transform: translateY((-50%));
+      color: #a5a5a4;
+    }
+
+    .search-button {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+      cursor: pointer;
+      text-transform: uppercase;
+      margin: 5px;
+      font-size: 15px;
+    }
   }
 
-  .search-button {
-    position: absolute;
-    top: 50%;
-    right: 0;
-    transform: translateY(-50%);
-    cursor: pointer;
-    text-transform: uppercase;
-    margin: 5px;
-    font-size: 15px;
+  .user {
+    align-self: flex-end;
+    width: 50px;
   }
 }

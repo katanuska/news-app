@@ -7,7 +7,7 @@ export const validateTokenMiddleware = (
   next: NextFunction
 ) => {
   console.log('Validate token');
-  if (req.path.startsWith('/auth')) {
+  if (!req.path.startsWith('/favorite')) {
     return next();
   }
 

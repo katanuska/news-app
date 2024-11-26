@@ -1,34 +1,35 @@
-@import '../variables.scss';
+@use '../variables.scss';
 
 .header {
   width: 100%;
-  background-color: $primary-color;
+  background-color: variables.$primary-color;
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-bottom: 35px;
 
   .header-content {
-    width: $page-width;
+    width: variables.$page-width;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 9px 0;
-    color: $text-color-light;
+    color: variables.$text-color-light;
 
     .header-left {
       display: flex;
+      align-items: row;
       align-items: center;
       gap: 46px;
 
       .header-text {
-        font-weight: $font-weight;
+        font-weight: variables.$font-weight;
       }
     }
 
     .homepage-link {
       text-decoration: none;
-      font-weight: $font-weight-bold;
+      margin: 11px 0;
     }
 
     .header-right {

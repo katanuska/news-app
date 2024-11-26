@@ -5,6 +5,7 @@ import bodyParser from 'body-parser';
 import cookieParser from 'cookie-parser';
 import authRoutes from './auth/authRoutes';
 import articleRoutes from './articles/articleRoutes';
+import favoriteRoutes from './favorite/favoriteRoutes';
 import { validateTokenMiddleware } from './auth/validateTokenMiddleware';
 
 dotenv.config();
@@ -16,11 +17,11 @@ app.use(cors());
 app.use(express.json());
 app.use(cookieParser()); // To parse cookies
 app.use(bodyParser.json());
-// TODO: vratiti autorizaciju
-// app.use(validateTokenMiddleware);
+app.use(validateTokenMiddleware);
 
 app.use('/auth', authRoutes);
 app.use('/articles', articleRoutes);
+app.use('favorite', favoriteRoutes);
 
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);

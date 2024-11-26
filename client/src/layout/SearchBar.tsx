@@ -24,6 +24,9 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
           Search
         </button>
       </div>
+      <div className="user">
+        <img src="./User.svg" alt="Current user" />
+      </div>
     </div>
   );
 };

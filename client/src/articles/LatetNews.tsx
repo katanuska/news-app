@@ -1,6 +1,8 @@
+import './LatestNews.scss';
+
 type LatestNewsAticle = {
   title: string;
-  publishedAt: Date;
+  publishedAt: string;
   url: string;
 };
 
@@ -9,11 +11,27 @@ type LatestNewsProps = {
 };
 
 const LlatestNews: React.FC<LatestNewsProps> = ({ articles }) => {
+  //TODO: vjerojatno treba izdvojiti negdje, barem lokalizaciju
+  const formatTime = (date: string) => {
+    return new Date(date).toLocaleTimeString('en-US', {
+      hour: 'numeric',
+      minute: 'numeric',
+      hour12: false,
+    });
+  };
+
   return (
-    <div>
+    <div className="latest-news-card">
+      <div className="title">
+        <img src="/LatestNews.png" alt="Latest News" />
+        <h2>Latest news</h2>
+      </div>
       {articles.map((article) => (
         <div key={article.url}>
-          <p>{article.publishedAt.toString()}</p>
+          {/* TODO: izdvojiti lokalizaciju vremena */}
+          <p className="article-time">
+            <small>{formatTime(article.publishedAt)}</small>
+          </p>
           <h2>{article.title}</h2>
         </div>
       ))}

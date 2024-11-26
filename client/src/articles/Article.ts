@@ -5,5 +5,5 @@ export interface Article {
   url: string;
   category: string;
   author: string;
-  publishedAt: Date;
+  publishedAt: string;
 }

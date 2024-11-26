@@ -1,7 +1,7 @@
-@import './variables.scss';
+@use 'variables.scss';
 
 .app {
-  width: $page-width;
+  width: variables.$page-width;
 
   .pageContent {
     display: grid;

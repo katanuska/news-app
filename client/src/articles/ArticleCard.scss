@@ -1,4 +1,4 @@
-@import '../variables.scss';
+@use '../variables.scss';
 
 .news-card {
   display: grid;
@@ -8,8 +8,8 @@
     width: 100%;
     height: 212px;
     object-fit: cover;
-    border-top-left-radius: $card-radius;
-    border-top-right-radius: $card-radius;
+    border-top-left-radius: variables.$card-radius;
+    border-top-right-radius: variables.$card-radius;
   }
 
   .card-content {
@@ -17,18 +17,10 @@
     display: grid;
     grid-template-rows: auto 1fr auto;
 
-    p {
-      margin: 0px;
-    }
-
     .category {
       align-self: start;
       text-transform: uppercase;
-    }
-
-    .title {
-      align-self: start;
-      margin: 0 0 11px 0;
+      font-weight: variables.$font-weight-bold;
     }
 
     .author {
